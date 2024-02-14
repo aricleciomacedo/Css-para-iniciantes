@@ -1,0 +1,86 @@
+h1 {
+    color: red;
+    background-color: black;
+    font-size: 16px;
+}
+
+.name {
+
+    color: chartreuse;
+    font-size: 30px;
+    text-align: center;
+    inline-size: 150px;
+    margin-inline:500px;
+    background-image: url(./imagem1.jpg);
+    border: 5px solid black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular'Lucida 'Sans Unicode';
+}
+
+a.p3:hover { /*OBS: Criamos essa classe para que a tag <a> não não fique com os mesmo estilos das
+            configuarações abaixo; ou seja aqui serão indivudualizamos o estilo para essa tag.
+            Aqui estilizamos a classe (p3) criada dentro da tag (a) dentro do body no index.html
+            <p><a class="p3" href="aprender.html" target="_blank">>Paragráfo3</a></p> 
+            E usamos o (hover) que é p/quando passarmos o mouse sobre o paragrafo 3 da pagina, aplique
+            um efeito sobre o texto.*/
+
+    background-color:red;
+    font-size: 30px;
+    font-family: impact;
+}
+*/
+h6 {
+    color: blue;
+    background-color: black;
+}
+
+#paragrafo2 {
+
+    color: yellow;
+    background-color: brown;
+    text-align: center;
+    inline-size: 250px;
+    font-size: 22px;
+    border: 5px dotted black;
+
+}
+
+p { /*Aqui personalizamos todas a tags <p>, e adionamos as propriedas*/
+    display: block; 
+    margin-block-start: 1em; /* distancia inicial margem entre o paragrafo e o titulo*/
+    margin-block-end: 1em; /* distancia final da margem entre o paragrafo e o titulo*/
+    margin-inline-start: 110px; /* distancia do texto em relação ao inicio da margem. */
+    margin-inline-end: 110px; /* distancia do texto em relação ao fim da margem. */
+}
+
+a { /*Aqui definimos a estilização text com link adcionado */
+
+    background-color: black; /* mudamos a cor de fundo*/
+
+}
+
+/* unvisited link */
+a:link {
+    color: red;
+    text-decoration: none;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* mouse over link , Aqui estilizamos o item , e vemos isso quando passamos o mouse por cima.*/
+  a:hover {
+    text-decoration: underline; /*Decoramos o texto com sublinhado*/
+    color: black;
+    background-color: yellow;
+    font-size: 20px; /*aumenta o tamanho da fonte do texto*/
+  }
+  
+  /* selected link, para quando clicarmos no texto */
+  a:active {
+    color: blue;
+    text-decoration: underline;
+    background-color: black;
+  }

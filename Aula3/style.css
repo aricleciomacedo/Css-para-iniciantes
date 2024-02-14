@@ -1,0 +1,54 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+.header {
+    border: 5px solid red;
+    background-color: #ccc;;
+    position: relative;
+}
+h1 { 
+    color:yellow;
+    background-color: black;
+    text-align:center ;
+}
+P {
+    color:blue;
+    text-align:center;
+    margin-top: -25px;
+    font-size: x-large;
+    border: 5px solid black;
+}
+body{
+
+    margin: 20px 20px;
+
+}
+.logo {
+    width: 100px;
+    margin-left:50px;
+    margin-top: 15px;
+    cursor: help;
+}
+.menu {
+    background-color:rgb(253, 5, 5);
+    border: 3px solid black;
+    position: absolute;
+    right: 50px;
+    bottom:150px;
+    border-radius: 16px;
+}
+.menu ul {
+    list-style: none;
+    margin-right: 30px;
+}
+.menu li {
+    background-color: rgb(255, 252, 57);
+    border-radius: 16px;
+    display:inline;
+    cursor: pointer;
+    margin: 10px;
+    padding: 10px;
+    font-family: Arial;
+    font-style: italic;
+}

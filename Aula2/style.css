@@ -1,0 +1,38 @@
+/* Aqui é onde iremos estilizar todas as tags criads dentro do nosso arquivo index.html. */
+
+body{
+    background-color: yellow;
+}
+/*style.css*/
+
+.div1{
+    font-size: 0,1em;
+    font-weight: bold;
+}
+.div2{
+    font-size: 0,1em;
+    font-weight: bold;
+}
+div{
+    border: 5px solid red;
+    /*margin-left: 20px;*/
+    /*margin: 20px; */
+    /*margin: 20px 10px;*/
+    margin: 55px 20px 55px 20px;
+    /*padding: 20px;*/
+    padding: 20px 500px; /*Assim conseguimos jogar o texto pra o centro da página.*/
+}
+h1, p{ 
+    color: black;
+    border: 5px solid red;
+    margin: 55px 20px 55px 20px;
+    padding: 20px 400px;
+    font-size: 5em;
+    font-weight: bold;
+}
+span, a {
+    border: 5px solid red;
+    font-size: 1em;
+    margin: 55px 20px 55px 20px;
+    margin-left: 90px;
+}

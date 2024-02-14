@@ -1,0 +1,171 @@
+Link da aula:	https://www.youtube.com/watch?v=GPfqZXVvM-k&ab_channel=MiguelMaia
+
+Nessa aula, já levamos em consdiração que você ja sabe criar o link de comunicação do css com html da seguinte forma:
+		
+		NO index.html e  dentro da tag <head> adcionamos a tag link e dentro colocamos os parametros:
+		<link rel="stylesheet" href="style.css >
+		Dentro do corpo <body>, criamos uma tag h1, e adcionamos um titulo qualquer como no exemplo abaixo:
+		<h1>Video 2 css</h1>
+		Criamos e abrimos o arquivo style.css, e dentro dele chamamos a tag que desejamos estilizar, nesse caso a tag <h1>.
+		Então adcionamos uma cor pro texto e outra pro fundo do corpo da seguinte forma! veja abaixo o exemplo:
+		h1 {
+			color: red;
+		}
+		body {
+			background-color:black;
+		}
+
+	AGORA ABRA O INDEX NO NAVEGADOR E VEJA SE A COR DO TEXTO E DO FUNDO MUDARAM, SE SIM , SIGNIFICA QUE O CSS E O HTML ESTÃO SE COMUNICANDO.
+
+
+Duas coisas serão importantes para aprender mais sobre a Linguagem CSS
+
+		1. CSS BOX MODEL
+Podemos dizer que o Box model, é a orintação básica de como sua página vai ser mostrada no navegador. Cada detalhe do box, refere-se aonde você vai
+adionar seu itens.
+	Para treinar CSS BOX MODEL use crie uma <div> dentro do corpo html a tag <body>, dentro da div um texto qualquer como no exemplo abaixo:
+	
+	<body>
+	  <div>
+	    Está é a minha div
+	  </div>
+	</body>
+	Agora salve o arquivo, e execute no navegador, nesse caso a frase dentro da div vai aparecer na página no navegador.
+
+							SAIBA QUE;
+O inspecionador de elementos, console do navegador ou modo desenvolvedor é uma ótima ferramenta para auxiliar o iniciante e até mesmo o
+avançado em linguagem de tecnologia, pois ela ajuda a ver o processo de criação e erro ou bugs dos códigos além de nos ajudar a visualizar
+o css box model na hora da edição.
+	
+No Google Chrome usamos as teclas de atalho crtl + shift + i ou F12 ou botão direito do mouse e clica e inspecionar ou ainda
+clica em três pontinhos, clica em Mais ferramentas, e clica em ferramentas do desenvolvedor.
+
+							CSS BOX MODEL 
+Para inicio podemos usar um seletor de tag dentro do style.css, nesse exemplo pode ser a tag div, pois como exemplo temos somente ela.
+Lembre-se que no caso da propriedade borda que é uma propriedade aninhada, significa que precisa ser passada mais de um parametro atribuido a ela.
+
+							NESSE CASO :
+Selecionamos a tag, atribuimos a propriedade border, definimos a largura, definimos o tipo pontilhado, solido etc, e definimos a cor;
+atribuimos tambem uma margin, e iremos estilizar a parte margin da BOX, que é a propriedade que envolve toda a parte de fora da borda do conteudo;
+Com essa propriedade nós aumentamos o tamanho da margem que é transparente, fazendo com que o conteudo, item,texto, ou objeto se afaste da margem;
+Podemos notar que o conteúde diminui de tamanho. POdemos atribuir a propriedade padding para que o conteudo dentro da area da borda se afaste, assim como
+acontece com o margin que afasta o conteudo do canto da página.
+
+							FICANDO ASSIM:
+	div {
+	   boder: 1px solid red;
+	   margin-left: 20px Assim podemos fazer com qualquer lado, basta atribuir abaixo a propriedade para os outros.
+	   margin: 20px; Assim atribuimos 20px a todos os lados da margem.
+	   margin: 20px 10px; Assim atribuimos 20px em cima/baixo, e 10px na esquerda/direita.
+	   margin: 5px 10px 3px 10px; Assim atribuimos tambem valores a margem do topo, da direita, de baixo e da esquerda.
+	   padding-left: 20px; Podemos assim como no margin atribuir mais de valor ao padding.
+	   padding: 20px 20px; Assim atribuimos os valores de cima/baixo e esquerda/direita
+	}
+
+				SOBRE AS ÁREAS:
+Chamamos a parte onde vai o conteúdo de (content), que pode ser imagem, texto, ou outra tag.Então entender isso nos ajuda a compreender o funcionamento do 
+css e do html, e de outra linguagens.
+
+	LEMBRE-SE QUE É POSSÍVEL VER E ACOMPANHAR O COMPORTAMENTO DO HTML E DO CSS ATRAVÉS DO CSS BOX MODEL DO INSPECIONADOR DO NAVEGADOR:
+	AINDA PODEMOS VER QUE UMA BOX É COMPOSTA POR: 
+		CONTENT = conteúdo disposto ao centro
+		PADDING = preenchimento ao redor do conteúdo
+		BORDER = borda que envolver o preenchimento do conteúdo e
+		MARGIN = que é a margem que envolve ambos.
+	
+		PROPRIEDADE DISPLAY
+
+Essa propriedade do css, é muito abrangente dentro do css e envolve muito assunto em relação a ela.
+Trataremos de dois tipos que são bastante utilizadas no css, que são; a (block e inline).
+
+	Aqui nesse exemplo vamos chamar essa propriedade div dentro do arquivo style.css da seguinte forma:
+	
+	div {
+	   display: block;
+	}
+	
+	E porque utilizar isso?
+Entenda que, por padrão, qualquer tag html possui um tipo de display defindo, e esse tipo muda conforme a tag.
+A tag <div> que é a do nosso exemplo, possui por padrão o tipo ( block ) para o display. Então para essa tag não precisamos informar, pois já é padrão
+dentro do html, e podemos ver isso por meio do inspecionador do navegador.
+	Podemos dizer que o display refer-se a toda a área que a tag ocupa dentro da página; e a forma simples de ver isso é por meio de uma borda de
+cor ao redor do item.
+	Outra forma de ver na prática, é adionando uma segunda tag <div>, que vai receber os mesmos parametros; Note que ela vai ser posicionada abaixo
+da primeira ocupando o espaço total da linha no display block padrão.
+
+Existe outras tags que também trazem como padrão o display block embutido, por exemplo: qualquer tipo de titulo que vai de <h1> a <h6>.	Vale lembrar que
+<h1> possui mais parametros padrões, como sabemos? vemos quais através do inspecionador do navegador.
+ 	Podemos ver que os padrões embutidos na tag <h1> são:
+	h1 {
+    	  display: block;
+    	  font-size: 2em;   Aqui está definido o tamanho padrão da fonte.
+    	  margin-block-start: 0.67em;
+    	  margin-block-end: 0.67em;
+          margin-inline-start: 0px;
+   	  margin-inline-end: 0px;
+  	  font-weight: bold; Aqui está definido a intensidade padrão da fonte como negrito.
+	}	
+E podemos estilizar cada uma delas alterando suas propriedades , tipos e valores.
+
+	Há ainda os parágrafos que são as tag <p> que também possuem display block por padrão, ou seja ocupam a linha da página de fora a fora.
+Essas mesmas carecteristicas abrange outras tags como: <form>, <header>, <footer>, <section> entre outras dentro do html.
+
+	Aqui nesse outro exemplo de display que é o (inline) vamos chamar a propriedade span dentro do arquivo style.css
+
+	span {
+	  display: inline; Esse é o padrão do span.
+	}
+
+As três principais propriedades que possuem esse tipo de display e comportamento são elas o: <span> que é uma alternativa div, porém seu display é inline, 
+ou seja o item não vai ocupar toda a linha da página. Podemos ver isso na prática quando adcionamos uma borda, e notaremos que a borda é consoante ao 
+tamanho do texto e na proporção em que for adcionado algo, diferente do diplay block que ocupa a linha inteira da página.
+			NOTE:
+		Cada <span> será adcionado um ao lado do outro (inline), como se fosse em bloco, 
+		enquanto que <div>, <h1>, <p> são adcionados em linha como se fosse em coluna (block).
+
+A tag <a> também possui este mesmo comportamento citado acima, mesmo essa propriedade sendo um link, os padrões de display são iguais.
+	a tag <a> recebe como propriedade um href, que é o link pra onde vai levar o usuário e entre > e  < é o texto desejado.
+	Escrevemos ela da seguinte forma como exemplo usando o link do google:
+
+	<a href="http://google.com">Google</a> Assim criamos um texto linkado, e quando passarmos o mouse sobre esse texto, a maozinha indicará que 
+aqui há uma outra página que pode ser acessada quando clicarmos no texto, ( ou botão ) se assim for criado.
+
+		FIQUE SABENDO QUE;
+
+qualquer display pode ser alterado, seja de block para inline, ou inline para block, porém essa prática dentro das divs, não são correntas, pois exitem 
+outras propriedades que atendem as necessidades para cada tag.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,264 @@
+>>>LInk da aula;
+https://www.youtube.com/watch?v=nCRE-h0sdjA&ab_channel=MiguelMaia
+
+>>>Passos:
+1. Criar a pasta da aula na undidade desejada com o nome (Css para iniciantes, ou outro desejado).
+2. Com o VSC (Visual Studio Code) abra a pasta criada, e dentro dela crie um New Folder como o nome(Aula1).
+3. Dentro da pasta Aula1, crie um New File com o nome (index.html). Assim dizemos que queremos trablhar com arquivo na linguagem html,
+	e o SVC irá entender que a estrutura do código tem por base o HTML.
+4. Agora abra o arquivo (index.html) no VSC (Virsual Studio Code), e na linha 1 de códigos digite: !
+	(!) Esse comando mostra duas estrutura de html, nessa aula escolhemos a primeira , que nos dará a estrura para html:5.
+	Podemos ainda ditar a plavra htm, e escolher a estrura html:5, que é a utilizada na aula.
+
+>>>A ESTRUTURA HTML
+
+	Aqui está a estrutura html, e seu padrão serve para a maioria dos navegadores na hora de buscarem o que exibir na página.
+Veja ainda, o que representa as linhas de códigos.
+
+
+<!DOCTYPE html> ------Aqui é o tipo de documento que o navegador vai exibir.
+<html lang="en"> -------Aqui abrimos a tag html, que vai receber todo o conteúdo da página e ainda definimos a linguagem padrão de nossa página.
+<head> ---------------------Aqui é a abertura da tag cabeça de nossa página.
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title> -----Aqui é o titulo de nosso arquivo, e será exibido no topo da Aba, no navegador.Para muda, edite o texto  entre > <.
+</head> ------Aqui é o fechamento da tag cabeça.
+<body> -----Aqui abre a Tag corpo.
+</body>------Aqui fecha a tag corpo
+</html>-------Aqui é o fechamento html
+
+>>>COMENTANDO NA LINHA DE CÓDIGOS
+Na linguagem de html, para comentarmos na linha de códigos, usamos o seguinte comando: <!-- digite aqui o texto desejado -->
+	Para editar basta modificar do texto.
+Já dentro da linguagem Css, o comando para comentar é o seguinte: /* digite o texto desejado aqui */.
+	Como no html, no css basta editar o texto.
+
+
+>>>NOTA:
+Para mais informações e melhorar o apredizado, é bom pesquisar sobre o assunto, uso o google por exemplo.
+
+>>>O QUE É CSS?
+
+CSS é chamado de linguagem Cascading Style Sheet e é usado para estilizar elementos escritos em uma linguagem de marcação como HTML. 
+	Cascading Style Sheet o que é? é um mecanismo para adicionar estilos a uma página web, aplicado diretamente nas tags HTML ou 
+	ficar contido dentro das tags <style>. Também é possível, adicionar estilos adicionando um link para um arquivo CSS que contém 
+	os estilos. 
+VEJA MAIS NO Wikipédia
+
+>>> 3 fORMAS DE TRABALHAR O CSS DENTRO DO HTML:
+
+	PRIMEIRA OPÇÃO
+
+Dentro da própra tag html, no caso pegamos a tag h1, podemos usar a estilização css, na forma IN LINE (assim chamamos).
+	Nesse caso definimos uma cor para o h1 que é o titulo da página.
+	
+<body>
+    <h1 style="color: rgb(7, 11, 252);">Css para iniciantes</h1>
+</body>
+	Note que o VSC já mostra alguns estilos no momento em que se esrevemos a palavra estilo.
+Existe alé da tag de paragráfo <h1>, outras 6, ou seja: <h1>, <h2>, <h3>, <h4>, <h5> e <h6>.
+	Cada tag dessas nos oferece um tamanho pré definido de fonte.
+
+	SEGUNDA OPÇÃO
+
+É possível usar a tag de estilização css (style) de forma interna, e esse estilo podemos aplicar dentro ou fora da tag <head> da estrutura html.
+	Note: Que a tag <style> é uma tag html, porém sua linguagem de escrita, é a CSS.
+	Podemos dentro dessa tag, impor as configuraçoes referentes as tag do html.
+Nesse exemplo abaixo, usamos a tag <style> fora da tag <head>, e aplicamos uma cor a tag <h1> que é o nosso título.
+
+NÃO cometa o erro de deixar definido dentro da tag <h1> um style estabelecido, pois fazendo assim, o <style> a seguir não vai sobre-por.
+	Mostra nesse script, as duas formas.
+
+</head>
+<style>
+    h1 {
+        color:rgb(119, 26, 206);    ( Css dentro do head ,é comum, porém não é o ideal, pois aumenta o tamanho do sript)
+    }
+</style>
+<body>
+    <!--<h1 style="color: rgb(7, 11, 252);">Css para iniciantes</h1>-->  (Css na própria tag, porém não é indicado fazer assim, pois dificulta a reutilização
+    <h1>Css para iniciantes</h1>						da tag, e a organização do código).
+<body/>
+
+	
+	TERCEIRA OPÇÃO
+
+Podemos fazer a estilização das tags usando arquivos externos. Para isso, criamos o arquivo na pasta raíz onde estamos salvando o projeto.
+	Em (new file) crie o arquivo com nome opcional e pontue o css. 
+	Assim o Vss entende que estamos solicitando a criação de um arquivo CSS e tudo dentro dele será editado nessa linguagem.
+Veja o exemplo do arquivo criado para essa aula:
+	styles.css
+
+Feito isso; Dentro do arquivo style.css informamos que queremos mudar a cor da tag <h1>, que está no <body> do html. VEJA ABAIXO COMO FICA.
+	
+h1 { 
+    color: red;
+}
+
+	Porém somente assim não vai funcionar, e a aplicação dos estilos não pega. 
+	Precisamos criar uma referência á esse arquivo Css dentro do HTML, pois o script html não captura essa informação sem que receba os comandos
+	de interpretação. Ou seja o html nem sabe que esse arquivo existe.
+PARA ISSO:
+	Criamos a tag <link> dentro da tag <head> e passamos dois parametros; primeiro o rel="stylesheet" que informa ao html que isso será uma folha de estilo, 
+	e o href=" " que é usado para passar path (passar o caminho do arquivo).VEJA ABAIXO COMO FICA.
+
+<link rel="stylesheet" href="styles.css" />
+
+LEMBRAR:
+As duas opções anteriores precisam estar desativada do script, seja posta em comentário <!-- -->, ou nem escritas.
+
+			SELETORES
+	
+OBSERVAÇÃO:
+	Esse h1 dentro do arquivo styles.css, é chamado de ( SELETOR DE TAG ), e existe infinitas possibilade de fazer seletores.
+	SELETORES são feitos atráves de <tags>
+	EXEMPLOS DE SELETORES:
+		escrito no html = <p> e no css = p { }
+		escrito no html = <body> e no css = body { }
+OBS:
+Podemos ultilizar todas as <tags> presente no html como seletores.
+		
+	O QUE É SELETOR?
+É básicamente! qualquer coisa que eu queira estilizar dentro da estrutura html. O seletor por sua vez me ajuda a informar o que especificamente eu 
+quero estilizar dentrd do html.
+	Quando informamos que h1 é o seletor, dizemos que toda tag <h1> em nosso html, receberá o mesmo estilo que editamos.
+
+PODEMOS dentro dos seletores e adcionar fontes para estilizar textos.
+	Usamos aqui um exemplo de 
+	
+	SELETOR DE TAGS
+
+h1 {					---Seletor h1, para estilizar a tag <h1>
+	
+  color: red;				---Cor definida para a nossa tag
+  font-size: 16px;                      ----Tamanho da Fonte para o texto de nossa tag
+
+}
+
+		PROBLEMA COM SELETORES QUANDO TEM VARIAS TAGS COM NOMES IGUAIS
+
+Esse problema acontece geralmente quando por exemplo criamos duas ou mais tags com nomes iguais, e selecionamos no css a tag a ser estilizada, dai
+o mesmo estilo definimos recai sobre as outras tags.
+
+		RESOLVENDO A QUESTÃO
+
+Para isso precisamos usar outros seletores disponíveis no css, e para utilizar precisamos crialas no script.
+
+	EXEMPLOS DE CRIAÇÃO , NOME E USO DOS SELETORES
+
+SELETOR DE CLASSES
+
+	SELETOR CLASS
+
+	Dentro da <tag> adcione o seletor class=" " e dentro digite o nome desejado.
+	FICA ASSIM COMO EXEMPLO:
+
+	<h1 class="name">Aprende nunca é tarde </h1> 
+
+AGORA, para editar esse seletor dentro do style.css, informamos usando o ponto(.), antes da classe criada na tag.
+	FICA ASSIM:
+	
+	.name { }
+
+DESSA FORMA, podemos editar a tag de forma isolada, sem que outra com mesmo nome sofra alterações.
+
+	Usamos exemplos de PROPRIEDADES COM VALORES PRÉ DEFINIDOS,EM UNIDADE DE MEDIDA E MÚLTIPLOS:
+		Valores definidos são fixo como por exemplo ( center, solid, justify, left, rigth, etc),
+		Os indefinidos podemos editar, como exemplo (pixels, porcentagem, largura, altura, etc).
+		E os valores mútilpos como por exemplo: naos atributos de fonte.
+		NOTE ABAIXO que text-align: center; --------------------------tem valores pré-definidos.
+			      e font-size: 30px;   -------------------------- tem valores e unidade de medidas para edição.
+				font-family: Arial, Helvetica, sans-serif; ---tem valores múltiplos atribuído
+	
+		.name {			  ----Aqui estilizamos a tag <h1> isolada, pois definimos ela como uma classe e nomeamos ela assim.
+
+			font-family: Arial, Helvetica, sans-serif;----Aqui definimos a fonte para o texto, e o navegador vai buscar na sequencia.
+    			color: chartreuse; ---Aqui definimos a cor do texto
+			font-size: 30px; -------Aqui mudamos o tamanho da letra
+    			text-align: center; ---Aqui definimos a posição do texto
+			inline-size: 20px; ----Aqui define um tamanho em linha, e deiza o plano de fundo do texto alinhado as letras do texto
+			margin-inline: 300px; ----Assim mudamos a posição do item em relação a borda esquerda da página
+			background-image: url(./imagem1.jpg); ----Assim colocamos uma imagem de fundo.
+			border: 5px solid black;----Aqui adcionamos uma borda de 5px solido na or preta.
+				AQui ainda podemos usar além de solid(solida), oplções como: dashed(tracejada), transparent(trasparente)
+				dotted(pontilhada), double(dupla), none(nenhum),
+		}
+
+OBS:
+Assim como chamamos essa classe, poderiamos chamar qualquer outra criada nas tags do html, e para isso basta usar o ponto( . ) e o nome da classe.
+
+	PRIÓRIDADE NO SCRIPT
+	Mesmo que o seletor de classe seja posto depois de um seletor de tags, o navegador vai ler a classe primeiro, ou seja
+	se eu aplicar uma cor para uma tag usando classe para indivualizar esse estilo, e dentro do css, inventr a posição dos seletores, 
+	o navegador por padrão entende a ordem de leitura do código.
+	Mesmo invertento as posições na escrita, nõ vai mudar para o leitor.
+
+	SELETOR DE ID
+	
+	Mesmo não sendo tão comum , o seletor ( ID ) pode ser usado.
+	Dentro de uma tag , por exemplo: <p> (paragrafo) , escrevemos o texto, e dentro do arquivo style.css aplicamos as configurações desejadas.
+
+	EXEMPLO:
+	
+	Dentro do arquivo index.html escrevemos um paragráfo com o seletor de ID nomeado da seguinte forma:
+<body>
+	<P id="paragrafo"> texto de parágrafo </p> <!-- Vale lembrar que pode atribuir qualquer nome ao seletor.-->
+</body
+
+	E dentro do arquivo syle.css chamamos o seletor criado para estilizaçã, digitando o jogo da velha (hashtag) ou "tralha" como alguns chama.
+	O seletor deve ser escrito exatamente como escrito denro da tag seguinte forma:
+	
+#paragrafo {
+
+   color: yellow;
+
+}
+	
+Assim como no class podemos chamar vários atributos ao nosso ID, como exemplo: cor de fundo (background-color:), tamanho em linha (inline-size:)
+entre outros que ajudam na estilização da tag atraves de um seletor.
+
+OBS:
+	Existe uma diferença, e é importate saber entre o seletor de classe ( class=" " ), e o seletor de ID ( Id=" " ).	
+
+	A DIFERENÇA;
+		O ( ID ) não se pode repetir em qualquer outro lugar, até fazemos isso e funciona, porém não é uma boa prática.
+		Não podemos duplicar seletores de ID, pois é considerado icorreto, pois pode acarretar problemas, como por exemplo
+		quando se está usando jaycare, no site onde as vezes é comum fazer seletores por ID, e a garantia é e exclusividade
+		pode emitir problemas.
+		Para garantir que algo não vai se repetir em outro lugar, usamos o ID.
+		Caso aja dúvida de que algo vai se repetir, também não utiliza o ID.
+	
+		Existe inúmeros seletores, mas o mais aconselhável, é o class, e na maioria da vezes é  caminho mais seguro.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

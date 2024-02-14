@@ -1,0 +1,290 @@
+Link dessa aula:
+	https://www.youtube.com/watch?v=VZ9e8il8_XI&ab_channel=MiguelMaia
+
+Para essa aula usaremos a mesma estrutura html:5 que ja usamos nas aulas anteriores, que pode ser adicionada dentro do arquivo index.html digitando
+o sinal de exclamação (!), ou digitando html, passando sobre a escrita e escolhendo html:5.
+
+Dentro do Visual Studio Code, com o arquivo index.html e o arquivo style.css criado e aberto, começamos nossa aula.
+
+>>>OBS: Assim como na aula anterior aqui nós iremos usar o arquivo style.css para fazermos a estilização das tags, ao invés de fazermos isso 
+dentro da tag <style> dentro do <head> que estilizar tags dentro do <body> no html.
+Então faremos essa estilização por meio de link, usando  o (rel, e href) omo já vimos:
+			<link rel='stylesheet' href="style.css"><qlink>
+
+Para vermos a comunicação do <link> com o html, nós criamos o <h1> dentro do <body>, adcionamos o texto que para esse caso é titulo como já
+aprendemos.
+
+	VEja no exemplo:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula 3</title>
+    <link rel='stylesheet' href="style.css"></link>
+    <style> /*Usamos o a tag <link> para fazermos a estilização fora desse padrão
+        /*h1 { 
+            color:black;
+            background-color: red;
+        }*/
+    </style>
+</head>
+<body>
+    <h1>Olá mundo! Eu sou abençoado por Deus.</h1>
+</body>
+</html>
+
+Agora dentro do arquivo style.css estilize com o exemplo , 
+h1 { 
+    color:yellow;
+    background-color: black;
+    text-align:center ;
+}
+e abra do navegador o arquivo do tipo HTML criado.
+
+			CABEÇALHO
+
+Podemos utilizar div para criar cabeçalho, porém para inicio de compreensão, trabalharemos com html do tipo semântico; Que é a forma de usar as divs
+corretas no momento correto. Nesse caso se queremos escrever um cabeçalho então devemos utilizar a div correta que é <reader>.
+
+	O que devemos compreender é que podemos esrever a div que quisermos, e vai funionar da mesma forma , porém a semântica do html é importante 
+para a indexação dos sites, e o Google leva em cosideração essa semâtica para qualificação do site, projeto, além de ter uma melhor acessibiladade
+por parte das pessoas com deficiência.
+ 
+Veja um exemplo abaixo de como fica as duas divs dentro do <body>:
+	<body>
+
+    	  <div> <!--Assim funiona para adionarmos cabeçalho , porém a div correta é header-->
+             <h1>Olá mundo! Eu sou abençoado por Deus.</h1>
+    	  </div>
+	  <header>
+             <h1>Olá mundo! Eu sou abençoado por Deus.</h1>
+    	  </header>
+    
+   	</body>
+
+Ainda podemos estilizar a tag adcionando um seletor de classe dentro dela, no caso criamos dentro do <header> da seguinte forma;
+	 
+	  <header class='header'>
+             <h1>Olá mundo! Eu sou abençoado por Deus.</h1>
+    	  </header>
+E por meio do seletor de classe editamos a tag. Para isso, dentro do arquivo style.css use o ponto (.) e o nome da classe criada para estilizar
+como no exemplo abaixo:
+
+	.header {			aqui adcionamos uma borda e no navegador podemos ver essa borda em volta de tudo o que está dentro da 
+    	   border: 5px solid red;      nossa div <header>
+	   background-color: #ccc;;   Aqui nós pintamos o fundo do abeçalho de cinza com or hexadecimal.
+	}
+	
+VALE LEMBRAR QUE: O header possui display block, e como vimos na aula anterior, essa div irá ocupar 100% da linha na página; portanto não precisamos
+declarar o tipo de display block asra essa tag(div),pois por padrão ela já possui.
+
+SAIBA QUE:
+	É possível fazer um reset na tag para que ela elimine as margens e fique de fato com 100% de ocupação da linha, já que a tag por padrão contém 
+o display block que possui um padrao de margem em ambos os quatro lados.
+
+Para isso: Dentro do style.css Fasemos o seletor de tags, dizendo que queremos aplicar um determinado estilo nas tags selecionadas.
+	No exemplo a seguir iremos tirar a margem (margin) e o preenchimento (padding) da estrutura html que é composta pelas tags <html> e <body>.
+
+	Exemplo de como fica:
+
+	html, body {	Aqui vemos que usando virgula (,) podemos usar varios seletores para estilizar, e assim elimina a necessidade de esta criando
+    	    margin: 0;	classes para estilizar.
+            padding: 0;
+	}
+
+		IMAGEM NO CABEÇALHO
+
+	Vamos importar uma imagem , "aqui usaremos no formato png" dentro do nosso <header> usando a tag <img> ( no VSC digite img, e aparecerá as opções, 
+então basta escolher a segunda opção que é o source (img:s). o
+	BS: Pode ainda apagar o último parametro o (srcset"").
+SE NÃO: 
+	Atente para os parametros que são; img que é tipo de arquivo,o source(scr) que é de onde ele vem, e o alt que usamos pra indica qual arquivo deve 
+estar presente na página, caso ele não seja exibido por algum motivo.
+È importante (não obrigatório) que todos os arquivos estejam na mesma pasta, pra facilitar a importação.
+
+	ENTÃO FICA ASSIM O EXEMPLO;
+	
+	<img src="'nome do arquivo(ou use ./ para busar)" alt="nome qualquer ao arquivo" />
+
+Agora para estilizar o tamanho do arquivo na página crie uma class para essa tag da seguinte forma:
+	
+		<img class="nomei a  classe" src="nome do arquivo(ou use ./ para busar)" alt="nome qualquer ao arquivo" />
+Nosso exemplo:  <img class="logo" src="logo.png" alt="logo" />
+
+E para fazer as  edições, chame essa classe no style.css usando o seletor de classe que é o ponto (.) e o nome da classe, como no exemplo abaixo,
+iremos dizer que essa classe irá ter width (largura) de tantos pixels:
+
+	.logo {
+	    
+	    width: 100px;
+	    margin-left:50px;   Podemos assim mover nossa logo vinda da esquerda da margem.
+	    margin-top: 15px;   Aqui fastamos a logo um pouco da parte superior da página
+	    cursor: help;   Assim deixamos a logo clicavél, e vemos que o cursor do mouse muda ao passar sobre ela.
+		Existem diversos cursores e podemos ver que o VSC nos mostra as opções quando damos enter no nome cursor.
+
+	}
+
+	COLOCANDO TEXTO NA MESMA LINHA DA LOGO
+
+Devemos entender que não faz sentido que uma logo fique com nomes ou algo em baixo pois é o cabeçalho, então para estilizar essa parte da página usaremos
+o recurso de criação de MENU em sites, os quais tem links atrelados como contato, home, serviços e outros mais.
+	Para este fim usaremos a tag <nav> de (navegação) para nosso MENU, 
+
+Fazemos isso dentro da tag <body>, dentro da tag <header> adcionamos a tag <nav> , e dentro coloamos os itens do menu da seguinte forma:
+
+	
+ 	<nav>			Essa é a tag de MENU de navegação
+            Home	
+            Contato		Aqui são os três itens do menu, e pode ainda adicionar quantos desejar.
+            E-mail
+        </nav>
+
+Ambos os itens que foram adcionado dentro da tag <nav> irão aparecer abaixo da logo e um ao lado do outro.
+
+				A POSIÇÃO DO MENU
+
+Uma vez criada a tag<nav> para o MENU, os parametros padrões do html irá posicionar o itens do menu no anto esquerdo da página e abaixo da logo; 
+	Então pra estilizar cada item devemos usar as propriedades de listas que podem ser:
+	 <ol> de (ordered list = lista ordenada) que ponteia os itense 
+	 <ul> de (unordered list = lista não ordenada) que enumera a ordem dos itens.
+Criada a tag de lista, seja ordenada ou não, precisamos ainda de uma outra tag para cada item dessa lista, pois assim nos facilitará na estilização.
+	
+	Aqui usaremos a tag <li> de (list item = item da lista) e podemos fazer adcionado os itens já criados do menu da seguinte forma:
+
+	<nav>
+            <ul>  Essa tag mostra os itens poteados, se quiser numerados troque para a tag <ol>
+                <li>Home</li>
+                <li>Contato</li>
+                <li>E-mail</li>
+            </ul>
+        </nav>
+
+Dessa forma do exemplo acima posicionados os itens do menu um abaixo do outro formando de fato um lista de navegação.
+
+		ESTILIZANDO O MENU
+
+	Crie uma classe para a tag <nav> para estilizar o menu e os itens criados na lista.
+Podemos fazer isso da seguinte forma:
+	
+	<nav class="menu">	Aqui criamos a classe na tag <nave> e nomeamos ela de menu
+            <ul>
+                <li>Home</li>
+                <li>Contato</li>
+                <li>E-mail</li>
+            </ul>
+        </nav>
+
+Agora denro do arquivo style.css, utilize o seletor de classes que já aprendemos que é o (.)ponto  e o nome da classe, passe os parametros de 
+estilização da seguinte os exemplo abaixo:
+	
+	.menu {		Aqui seleionamos a classe menu criada na tag <navO dentro do index.html.
+	   
+	   background-color:rgb(250, 237, 237); Aqui deixamos um fundo do menu com cor.
+	   border: 5px solid black;  Aqui atribuimos a cor da borda do menu.
+	   position; absolute;        Atribuimos essa propriedade pra poder posicionar esse menu onde melhor quisermos na página.
+		Há três atributos para essa propriedade que são (fixed = fixo,ou seja ele não sofre alterações na página,
+	        relative = relativo onde ele fica relativo a ele mesmo e se ordena dentro do cabeçalho ,e o absolute = absoluto 
+		que se posiciona fora do cabeçalho no caso.)
+	   left:50px;    Aqui movimentamos e posicionamos o menu em relação a esquerda. Se usarmos o (right) movimenta da direita.
+	}
+Agora para posicionar esse menu dentro do cabeçalho fazendo que ele se posicione fixo mesmo que o cabeçalho sofra alterações, precismaos informar 
+o tipo de posicão de nosso cabeçalho , qeu nessa caso é a classe header.
+	Então atribuimos o tipo de posição dentro do seletor de classe já selecionada dentro do style.css da seguinte forma
+
+	.header {
+    	    border: 5px solid red;
+    	    background-color: #ccc;;
+	    position: relative;
+	}	
+Agora para que o menu, se posicione relativo ao cabeçalho, basta definir um (bottom: ;) dentro do seletor de classe .menu sa seguinte forma:
+	
+	.menu {
+	   background-color:rgb(250, 237, 237); Aqui adcionamos a cor de fundo do menu
+    	   border: 5px solid black; 
+    	   position: absolute;
+    	   right: 50px;
+    	   bottom:150;    Aqui o bottom posicionou o menu na parte de cima da página, e se mantém fixo em relação ao cabeçalho.
+	   border-radius: 16px;   Aqui arredondamos as bordas.
+	
+	}
+		
+
+
+No exemplo acima apenas adcionamos uma borda ao menu, porém dessa forma não conseguimos estilizar item por item, pois estamos usando o seletor de classes
+para o odo o menu, então para estilzar item a item use o seletor de classe e lista ou item.
+	
+	Abaixo usamos o seletor de classe e lista para atribuirmos os parametros que idicam que essa lista não terá como estilo os pontinhos nos nomes 
+	dos itens;Vejamos como fica o exemplo abaixo:
+	
+	.menu ul {	Aqui selecionamos a classe criada na tag nav
+    	   list-style: none;	Aqui removemos os estilo lista (bolinhas) do itens.
+	   margin-right: 30px;   Aqui movemos os itens da margem a direita, e conseguimos centralizar dentro do menu.
+	   padding: 0px;    Esse padding cresce o tamnho do menu, então não é lega usar.
+	}
+	
+	Agora queremos posicionar item por item um ao lado do outro ao invés de ficarem ebaixo um do ouro; então usaremos o seletor de classe e apontamos o
+	vamos estilizar, que nesse exemplo será todos os itens da lista criada; Vejamos o seletor usado e o parametro de exemplo abaixo;
+
+	.menu li {	Aqui selecionamos os itens a serem estilizados .
+
+	    background-color: rgb(252, 188, 188); Aquidefinimos uma cor de fundo para os itens da lista que formam os botões do menu.
+    	    border-radius: 16px;    Aqui arredondamos as bordas dos botões.
+	    display:inline;	Aqui nós definimos os itens da lista como sendo em linha.
+	    cursor: pointer;  Aqui dizemos que o item pe clicável na página.
+	    margin: 10px; 	Aqui serparamos os itens de perto um outro.
+	    padding: 25px;    Aqui aumentamos o tamanho do menu sem aumentar o tamanho do nomes dos itens .
+	    font-family: Arial;     Aqui mudamos  a fonte de texto dos nomes dos itens da lista menu.
+    	    font-style: italic;      Aqui definimos o estilo de fonte do nosso texto.
+	}
+
+
+   	
+
+		<<<<MAIS DICAS NAS PRÓXIMAS AULAS: >>>>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

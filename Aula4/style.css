@@ -1,0 +1,32 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+.header {
+    background-color: #ccc; /*Cor e fundo do cabeçalho */
+    padding: 10px; /* Espaç o interno do cabeçalho */
+    display: flex; 
+    flex-direction:row;
+    justify-content: space-between;/*Esaçamos as tags filhas = <img> e <nav> */
+    align-items: center;/* Centralizamos as tags filhas */
+    font-family: Roboto,sans-serif;
+
+}
+.logo {
+    width:60px;
+}
+.menu ul{
+    padding: 0px; 
+}
+.menu li {
+    display:inline; /* Aqui alinhamos os itens */
+    margin: 0 8px; /* Damos um espa;o entre eles */
+}
+@media(max-width: 376px){ /* Condicionamos o display a mudar para esse estilo quando atingir esse ma[aximo de largura. */
+    .header {
+        color:red;
+        background-color:rgba(129, 127, 127, 0.74);
+        flex-direction: column; /* Aqui mudamos o alinhamento dos itens */
+        
+    }
+}

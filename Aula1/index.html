@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+
+<script>
+
+    //Aqui adcionamos uma função com e add um link , para que o usurio seja direcionado a ele, 
+    /* criamos um botão do tipo entrada dentro do <body> da seguinte forma : 
+        <input type="button" value="Load new document" onclick="newDoc()"> */
+    function newDoc() {
+        window.location.assign("https://www.w3schools.com")
+    }
+</script>
+
+</head>
+
+<!--<style>
+    h1 {
+        color:rgb(119, 26, 206);
+    }
+</style> -->
+
+<body>
+
+    <h2>My First JavaScript</h2>
+    <button type="button"
+    onclick="document.getElementById('demo').innerHTML = Date()">
+    Click me to display Date and Time.</button>
+  
+    <p id="demo"></p>
+    <!--<h1 style="color: rgb(7, 11, 252);">Css para iniciantes</h1>-->
+    <h1>Css para iniciantes</h1>
+    <h1 class="name">Aprender nunca é tarde </h1> 
+
+    <!-- Aqui adcionamos um botão para direcionar até um link, e suas comfigurações foram feitas em:
+    <script>
+        function newDoc() {
+            window.location.assign("https://www.w3schools.com")
+    }
+    </script>-->
+    <input type="button" value="Site para estudar linguagens de tecnologia" onclick="newDoc()">
+
+    <p style="background-color: rgb(252, 5, 5);" >Paragráfo1</p>
+    <h2><b>NOTA:</b>Hello World!</h2> <!-- A tag <b> irá negritar texto em espicifo-->
+    <p id="paragrafo2">Paragráfo2</p>
+    <h3>Olá, mundo!</h3>
+    <p><a class="p3" href="aprender.html" target="_blank">>Paragráfo3</a></p>
+    <h4>Deus é bom.</h4>
+    <p><span style="cursor: pointer">Paragráfo4</span><br></p> <!-- O span irá apenas mudar a ponteira do mouse
+        quando ela passar por cima do texto, e o <br> criará uma linha em vazia abaixo-->
+    <h5>Seja bom também!</h5>
+    <p><b>NOTA:</b>Paragráfo5</p>
+    <h6>Quarta 22 de novembro de 2023</h6>
+    <p style="background-color: blue;">Paragráfo6</p>
+    <b>ok então,</b><b>ok então,</b><b>ok então</b> 
+    <b><a href="exemplodeendereçamento.html" target="_blank">>ok então,</a></b><!-- Assim esrevemos texto 
+        em negrito; essa tag <b> informa a que parte pertence o mesmo; e ainda linkamos a teg a outra pág.-->
+
+</body>
+</html> 

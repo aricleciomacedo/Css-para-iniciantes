@@ -1,0 +1,349 @@
+LInk da aula 4:
+https://www.youtube.com/watch?v=RpEZFpigR9U&ab_channel=MiguelMaia
+
+
+	Para inicio dessa aula usaremos a base de códigos já criados na aula 3 que é a seguinte:
+
+	No index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula 3</title>
+    <link rel='stylesheet' href="style.css"></link>
+    <style> /*Usamos o a tag <link> para fazermos a estilização fora desse padrão
+        /*h1 { 
+            color:black;
+            background-color: red;
+        }*/
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img class="logo" src="./Computer.png" alt="Computer" />
+        <nav class="menu">
+            <ul>
+                <li>Home</li>
+                <li>Contato</li>
+                <li>E-mail</li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
+	
+	NO style.css
+html, body {
+    margin: 0;
+    padding: 0;
+}
+.header {
+    background-color: #ccc;;
+}
+
+	Então apartir dessa base iremos avançar um pouco mais nessa aula de css.
+Com essa base, a página ficará com uma enorme logo, e o nosso menu ficará em baixo localizado no canto esquerdo da página.
+
+	DICA:
+Você pode abrir o arquivo html e o css um ao lado do outro pra melhor editar, para isso basta clicar no Split Editor Right ou (crtl+]).
+Obtmos assim a tela dividida em dois terminais, facilita a edição e podemos abrir assim quantos arquivos desejarmos.
+
+
+	Com a classe já criada e o arquivo já importado para nossa logo, agora nós utilizamos o seletor de classe dentro do style.css para podermos estilizar
+como na aula 3, a logo do nosso cabeçalho e as demais coisas que definirmos.
+	
+	Segue o exemplo:
+				
+	.logo{			Aqui usamos o seletor (.) da classe criada no index.html.
+	   width:300px;		Aqui definimos uma largura em pixels para a nossa logo dentro da página.
+	}
+
+	Agora para que possamos afastar um pouco mais essa logo do canto esquerda da página precisamos da propriedade para fazer isso acontecer.
+No caso usaremos a propriedade (padding) que cria um espaçamento interno pra div, e preenche com espaço que aparentemnete é invisivel,mas que é o afastamento
+que precisamos.	
+	Esse padding deve ser criado dentro do cabeçalho , que no aso é a div <header>, e para editar use o seletor de classe no style.css.
+		VEJAMOS O EXEMPLO ABAIXO:
+	
+		html, body {
+   		    margin: 0;
+     		    padding: 0;
+		}
+		.header {
+    		    background-color: #ccc;;
+    	  	    padding: 10px;		Aqui selecionamos a classe da div header e determinamos o quanto será esse preenchimento. Podemos dizer
+		}				que tudo dentro do cabeçalho será afastado 10pixels em ambos os lados (baixo,cima,esq e dir), ou podemos
+		.logo {				dizer que o preenhimento em ambos lados será de 10pixels.
+    		    width:300px;
+		}
+
+		POSICIONADO O MENU
+
+Agora queremos tirar o menu da parte de baixo da logo, e posicionar ele pro lado da logo, que é o mais comum e usado em uma exibição.
+Nessa aula ainda iremos posicionar o menu no canto direito da logo como fizemos na aula anterior, porém usaremos outras propiedades do css.
+
+	Nesse exemplo usaremos a propriedade (display) , que também já abordamos um pouco sobre ela nas aulas anteriores, mas dessa vez vamos usar outros
+tipos de display, difente dos anteriores (block ou in-line) .
+	
+	Vamos então usar o display (flex), e só em atribuir esse displayao nosso cabeçalho, notaremos que o menu irá se posicionar a direita da logo, mas o 
+que devemos entender é que essa propriedade agi como um aformação de blocos, isso quer dizer que todo item, tag, div adcionado a ele, irá se posicionar 
+do lado um do outro.
+	Vale lembrar que podemos usar esse tipo de display para todas as tags que desejarmos.
+	
+	Para ver isso na prática crie uma tag titulo <h1> dentro do <body>, dentro do <header>.
+
+	VEJA O EXEMPLO ABAIXO:
+	<body>
+    	    <header class="header">
+    	         <img class="logo" src="./Computer.png" alt="Computer" />
+    	         <nav class="menu">
+            	   <ul>
+                     <li>Home</li>
+                     <li>Contato</li>
+                     <li>E-mail</li>
+                   </ul>
+      	         </nav>
+                 <h1>My name is Ariclecio</h1>	Esse h1 irá se posiionar ao lado do menu, que tá ao lado da logo por conta do display flex.
+	    </header>					Vale lembrar que as demais tags serão posicionadas sempre ao lado (em bloco).
+	</body>
+
+	OBS: Caso queira que os elementos se posicione um abaixo do outro, baixa retirar a propriedade de display, e o css automaticamente atribui a
+propriedade padrão que é o display block, que joga os itens um abaixo do outro.
+
+	FILHOS DA DIV
+
+	Quando determinamos uma propriedade para um adeterminada div, nós dizemos que essa div é pai de todas as qeu estão dentro dela, portanto
+todas os demais itens recebem o tipo de propriedade definida; que nesse caso é o display flex para o cabeçalho que é a div (header).
+
+
+	SELETOR DE TAG DENTRO DE CLASSE
+
+	Aqui nós itremos usar o seletor de classe (.) e pegaremos as tags que queremos estilizar propriedades. Nesse caso iremos modificar o tipo de display
+de todas as <li> criadas no index.html da seguinte forma:
+
+	Dentro do style.css segue o exemplo;
+
+	.menu li {
+     	    display:inline;	Aqui definimos que o diplay será do tipo em linha, modificando assim o padrão que é in-block.
+	}
+	
+	Dessa forma somente os itens, os <li> da lista dentro da tag <ul> (lista não ordenada) que é o nosso (menu)
+	ficarão um ao lado do outro sem modificar o cabeçalho.
+
+
+Agora podemos estilizar mais propiedades desse menu através do seleletor de classe e tag que vimos acima, para estilizar noso (menu) da seguinte forma:
+
+	
+	Dentro do CSS:
+	
+	.menu li {
+ 	   display:inline;   Aqui já vimos que mudamos a propriedade padrão do tipo de display do nosso menu.
+ 	   margin: 0 8px;    Aqui definimos que a margem vertical será de 0 e que a horizontal será de tantos pixels.
+	}			Dessa forma conseguimos espaçar os itens de nossa lista, para que não fiquem colados um no outro.
+
+
+	CENTRALIZANDO O MENU
+
+Como queremos centralizar o nosso menu , de forma que os textos dos botões fiquem no meio e se alinhe com a logo, precisamos entender que a (div pai), que é 
+o <header> ;é quem está com o display flex, e ele  é quem facilita pra nós o posicionamento do filhos ( que são as outras tag, classe, divs etc) que etão
+dentro dessa div.
+
+	ENTENDA:
+
+	<body>     Aqui é div pai, e header é o filho, as demis não.
+    	    <header class="header">	Aqui é filho do body, e pai das tags <img> e <nav> porém não de <ul> e <li>
+     	        <img class="logo" src="./Computer.png" alt="Computer" />   Essa div não é pai de ninguém, porém é filho de <header>
+        	<nav class="menu">      Essa div pai de <ul> e filha de <header>
+        	      <ul>	Essa tag é filha de <nav> e pai de <li>
+           	         <li>Home</li>
+         	         <li>Contato</li>		Aqui não seno pai , só filho de <ul>
+          	         <li>E-mail</li>
+       	    	      </ul>
+      		</nav>
+      	    </header>
+	</body>
+
+	Agora para centralizar o menu, precisamos informar a (div pai ) que tem diplay flex, que as tags relacionadas a ele (filhos) irão ter um alinhamento
+do conteúdo com espaço entre eles ( o <nav> e o <img>.
+	 Então usamos a propriedade  ( justify-content: space-between; ), e essa mesma pode ser modificada a seu critério.
+Note que com essa propriedade o menu vai se posicionar a direita do nossa página , pois o espaço entre os contúdo foram moifiados om essa propriedade.
+	E por fim definimos ao alinhamento do itens ao centro da seguinte forma:
+
+	.header {
+	    background-color: #ccc;;
+	    padding: 10px;
+	    display: flex;
+	    justify-content: space-between;    Aqui definimos o espaçamento entre os itens e jogamos o menu pro canto direito.
+.	    align-items: center;		Aqui definimos que o alinhamento do menu deve ser ao centro.
+	}
+	
+	ALTERAR FONTE
+
+Além de podermos usar o font-family que é mediante as fontes qeu possuem nosso pc, ainda temos propriedades de fontes que podemos usar e que não esteja
+instalada em nosso pc.
+
+VEJA BEM! Quando usamos por exemplo: o font-family: Verdana, Geneva, Tahoma, sans-serif; isso quer dizer que o nosso site o navegador irá busar em nosso p, 
+as fontes em sequencia, a medida que não tivermos a primeira instalada, o navegador busca a segunda, ou terceira e assim por diante, deixando assim a nossa 
+página limitada as fontes instladas.
+
+	Para + fontes , usaremos o site ( onts.google.com ) que é gratuito fácil de usar e bom pos no dar imensas possibilidades para estilizar os textos
+de nosso conteúdo.
+	No site digite um texto e escolha a fonte que melhor achar, estilizar da forma como desejar e click na esclhida, então vai abrir outras opçoes de 
+estilos, tipo letra mais grossa ou fina, selecionamos o quanto + será a expessura do texto, e um código será gerado om o estilo definido. Basta então copiar 
+esse código e adcionar a linha de código html e é importante que seja dentro do <head> para que essa fonte fique disponivel para o projeto.
+
+	COMO FICA O NOSSO EXEMPLO:
+
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula 3</title>
+    <link rel='stylesheet' href="style.css"></link>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>				Aqui são os 3 links dado para acesso a fonte criada.
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+</head>
+
+	AGORA para que o css estilize com essa fonte, adcione dentro do style.css onde deseja ter essa fonte da seguinte forma como no exemplo:
+
+.header {
+    background-color: #ccc;;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Roboto,sans-serif;	AQui está a fonte do site que é (Roboto) e caso ela não dê certo, o navegador vai buscar outra qualquer serifada. 
+}
+
+		RESPONSIVIDADE DO CONTEÚDO
+	A responsividade do conteúdo é básicamente a adaptação do site a qualquer tipo de dipositivo.
+
+Vamos simular que queremos o nosso site em um telefone, então para isso usando o Google Chrome no pc nós abrimos o terminal(inspecionador) do navegador e
+próximo ao seletor de elementos (a setinha) nós escolhemos o ( Toogle device toolbar) ou ( Ctrl+Shift+M ) que é um iconizinho parecido com celular, daí nos 
+deixamos a página no navegar semelhante ao que será no telefone.
+ NOTE que abaixo das opções de Dimensions:Responsive exite uma barra e ao passar o mouse sobre, aparece outras opções, por exemplo a primeira é a que está no
+canto esquerdo, e o nome é Laptop L - 1440px; então escolheremos a opção Mobile M - 375px que é uma opção onde podemos aplicar fontes que não ficarão tão
+pequenas em outros tamanhos. VALE LEMBRAR que essa forma de display responsive melhora a estilização da página quando está estiver em dispositivos móveis ou
+pc etc.
+
+		ESTILO DA PÁGINA MUDA CONFORME O TAMANHO DA TELA
+
+	Para isso usaremos uma opção do CSS muito bacana, que se chama media kery, então com ela podemos dizer ao css que pode aplicar a regra definida 
+apartir de uma condição; EXEMPLO; Dentro do style.css chamamos  (media queries) que é esrito assim: @media( ){};
+	Então dentro dos parenteses do media queries colocamos a condição, dentro dos colchetes definimos quem receberá modificações e que modificações
+serão essas. Uma vez feito o medis, atribuimos a acondição desejada para que essa regra seja aplicada. 
+
+	NO CASO ABAIXO A CONDIÇÃO SERÁ: Que a largura máxima da página seja de 375px, e quando chegar a essa condição no nosso exemplo, mudaremos então a
+cor da fonte de nosso reader(cabeçaçho).
+	
+	NOSSO EXEMPLO FICOU ASSIM: Dentro do style.css
+
+@media(max-width: 376px){		Usando o media queries, podemos definir uma condição, que nesse caso é de mudar a cor da fonte para vermelho
+    .header {				quando a largura da página ou do ( cabeçalho ) for diminuido abaixo de 375 pixels.
+	color:red;
+	}		
+}
+
+	COM essa propriedade do css podemos fazer o que quiser quanto a modificação e estilização da página quando esta sofrer variação de tamanho.
+
+	PODEMOS MUDAR A COR DE FUNDO E A POSIÇÃO DA LOGO E DOS ITENS atribuindo propriedades irão sobre-por até as padrões. 
+	
+	VEJA ABAIXO COMO FICOU:
+	
+@media(max-width: 376px){
+    .header {
+        color:red;
+        background-color:blue;		Aqui definimos que essa cor irá sobre-por outra qualqer que tenha sido atribuida.
+        flex-direction: column;		Aqui definimos que os objetos na página irão ficar em coluna , sobrepondo o padrão que é a condição ( row que quer
+        					quer dizer que estão em linha).  Dessa form vamos ver a logo ficar no meio da página e os demais itens.
+    }
+}
+
+		ENTENDA MAIS UM POUCO SOBRE DISPLAY
+Como já aprendemos antes, devemos entender que tags e divs tem padrões defindos para elas,nesse caso, algum display inplicito ( que já é pre-estabelecido 
+por padrão para determinda div ou tag).
+	Então para exemplo de aprendizado tratamos da tag <header> que é o cabeçalho de nossa página, a qual foi criada dentro do corpo <body> de nosso html.
+Já vimos que por padrão ela tem um display block, porém nessa aula nós mudamos esse padrão para display flex, e como padrão desse diplay o header ele ficará
+de forma implicita ( por debaixo do panos ou indireta ) com o atributo flex direction row. Ou seja mesmo sem precisar escrever na linha e código do css que
+seu diplay flex será flex direction row, o navegador irá atribuir como padrão, e para mudar isso , é preciso atribuir o parametro do tipo do diplay.
+	
+	VEJAMOS COMO FICA:
+
+	Dentro do style.css
+
+.header {
+    background-color: #ccc;;
+    padding: 10px;
+    display: flex;				Aqui é o tipo de diplay que definimos , substituindo o padrão que é block
+    flex-direction:column;			Aqui mudamos o estilo do tipo de display, substituindo o padrão que row.
+    justify-content: space-between;
+    align-items: center;
+    font-family: Roboto,sans-serif;
+
+}
+
+	OBS: Além do column,e do row ainda existem outras opções para o flex-direction que pode ser row-reverse que alinha ao contrário, ou seja joga a logo
+para o canto direito e os itens para a esquerda.
+	Temos o column-reverse que joga a logo pra baixo dos itens do cabeçalho.
+
+
+	ALINHAMENTO DOS ITENS 
+
+É sempre bom acompanharmos o andamento da criação da página por meio do inspecionador do navegador, pois assim podemos ver as pequenas falhas de posiçãod de
+dos itens, e com isso podermos saber onde aplicar a configurações necessárias para as tags, divs, classes, itens e assim por diante.
+
+	Aqui no nosso exemplo através do inspecionador vimos que o nosso menu não está centralizado com a logo, fazendo com que ficasse esquisito na página.
+No inspencionador vimos que o menu , que foi criado dentro da tag <ul>, dentro da div <nav> do <header, que fica dentro do <body> , dentro do index.html
+estava assim;
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+´   padding-inline-start: 40px; Com isso faz com que o menu fique descentralizado em relação á logo.
+}
+
+	Então para mudar esse padrão selecionamos a classe e a tag dentro do style.css e atribuimos a mudança desse posicionamento da seguinte forma:
+
+.menu ul{
+    padding: 0px; 	Esse padding 0 centraliza o menu com a logo.
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
